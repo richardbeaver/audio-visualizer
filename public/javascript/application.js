@@ -50,6 +50,28 @@ function start() {
 
 // ==============================
 
+// Listen for audio file uploads or a demo audio button click from user
+
+const audioSrc = document.getElementById('audio-src');
+const audioInput = document.getElementById('audio-input');
+
+audioInput.addEventListener('change', () => {
+  const audioFile = audioInput.files[0];
+  audioSrc.src = URL.createObjectURL(audioFile);
+  audio.load();
+  start();
+});
+
+const demoButton = document.getElementById('demo-audio-btn');
+
+demoButton.addEventListener('click', () => {
+  audioSrc.src = '/demo-audio/positive-by-audiocoffee-band.mp3';
+  audio.load();
+  start();
+});
+
+// ==============================
+
 // Listen for audio playback
 
 audio.addEventListener('play', start);
