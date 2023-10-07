@@ -1,8 +1,8 @@
 // Set up audio and canvas contexts
 
-const audio = document.getElementById('audio');
-const canvas = document.getElementById('canvas');
-const canvasContext = canvas.getContext('2d');
+const audio = document.getElementById("audio");
+const canvas = document.getElementById("canvas");
+const canvasContext = canvas.getContext("2d");
 
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -34,7 +34,7 @@ function draw() {
     const value = frequencyData[i];
     const barHeight = (value / 255) * canvas.height;
 
-    canvasContext.fillStyle = `hsl(${hue}, 100%, ${40 + (i / 2)}%)`; // Bars vary from darker to lighter
+    canvasContext.fillStyle = `hsl(${hue}, 100%, ${40 + i / 2}%)`; // Bars vary from darker to lighter
     canvasContext.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
 
     x += barWidth + 1;
@@ -52,20 +52,20 @@ function start() {
 
 // Listen for audio file uploads or a demo audio button click from user
 
-const audioSrc = document.getElementById('audio-src');
-const audioInput = document.getElementById('audio-input');
+const audioSrc = document.getElementById("audio-src");
+const audioInput = document.getElementById("audio-input");
 
-audioInput.addEventListener('change', () => {
+audioInput.addEventListener("change", () => {
   const audioFile = audioInput.files[0];
   audioSrc.src = URL.createObjectURL(audioFile);
   audio.load();
   start();
 });
 
-const demoButton = document.getElementById('demo-audio-btn');
+const demoButton = document.getElementById("demo-audio-btn");
 
-demoButton.addEventListener('click', () => {
-  audioSrc.src = '/demo-audio/positive-by-audiocoffee-band.mp3';
+demoButton.addEventListener("click", () => {
+  audioSrc.src = "/demo-audio/positive-by-audiocoffee-band.mp3";
   audio.load();
   start();
 });
@@ -74,13 +74,13 @@ demoButton.addEventListener('click', () => {
 
 // Listen for audio playback
 
-audio.addEventListener('play', start);
+audio.addEventListener("play", start);
 
-audio.addEventListener('pause', () => {
+audio.addEventListener("pause", () => {
   audioContext.suspend();
 });
 
 // Second event listener for play after pausing so that context resumes
-audio.addEventListener('play', () => {
+audio.addEventListener("play", () => {
   audioContext.resume();
 });
