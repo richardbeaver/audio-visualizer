@@ -14,7 +14,7 @@ Past versions at stages of development are saved in separate branches. Each bran
 is also deployed and can be found by prepending the branch name and two hyphens ("--")
 to the main deployment URL above.
 
-For example, the branch `file-upoad-and-demo` (the first completed implementation) can be found at [file-upoad-and-demo--audio-visualizer-app.netlify.com](https://file-upoad-and-demo--audio-visualizer-app.netlify.com).
+For example, the branch `file-upload-and-demo` (the first completed implementation) can be found at [file-upload-and-demo--audio-visualizer-app.netlify.com](https://file-upload-and-demo--audio-visualizer-app.netlify.com).
 
 #### Song used for demo:
 
