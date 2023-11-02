@@ -27,7 +27,7 @@ function draw() {
 
   canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
-  const barWidth = (canvas.width / frequencyData.length) * 2.5;
+  const barWidth = (canvas.width / frequencyData.length) * 1.5;
 
   let x = 0;
   for (let i = 0; i < bufferLength; i += 1) {
